@@ -19,7 +19,7 @@ export default function PromoCard(){
 const Styles = StyleSheet.create({
     container : {
         width : '100%',
-        height : 100,
+        top : 100,
         marginBottom : 25,
         borderRadius : 15,
         backgroundColor : '#FFFFFF',

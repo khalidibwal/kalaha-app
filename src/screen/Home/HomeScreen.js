@@ -9,6 +9,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import HomeCard from "../../component/card/HomeCard";
 import PromoCard from "../../component/card/PromoCard";
+import FeedBack from "../../component/card/FeedBack";
 
 export default function HomeScreen() {
   return (
@@ -29,13 +30,12 @@ export default function HomeScreen() {
         style={styles.notif}
       />
       <HomeCard />
-        <Text style={styles.fontPromo}>Promo </Text>
         <ScrollView horizontal>
         <PromoCard />
         <PromoCard />
         <PromoCard />
         </ScrollView>
-             
+        <FeedBack />
     </View>
     </>
   );

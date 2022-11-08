@@ -8,19 +8,14 @@ export default function RestoScreen(props) {
   return (
     <>
       <Card containerStyle={Styles.cardStyle}>
-        <Image
-          source={props.OutletImage}
-          style={Styles.cardImages}
-        />
-        <LinearGradient
-          colors={["#4c669f", "#3b5998", "#192f6a"]}
-        >
-          <TouchableOpacity style={Styles.button}>
+        <Image source={props.OutletImage} style={Styles.cardImages} />
+        <View style={{ borderRadius: 10 }}>
+          <TouchableOpacity onPress={props.onPress} style={Styles.button}>
             <View>
               <Text style={Styles.btnText}>{props.buttonTitle}</Text>
             </View>
           </TouchableOpacity>
-        </LinearGradient>
+        </View>
       </Card>
     </>
   );
@@ -35,18 +30,20 @@ const Styles = StyleSheet.create({
     fontSize: 15,
     justifyContent: "center",
     textAlign: "center",
+    top: 10,
   },
   button: {
     borderRadius: 50,
-    height:40
+    height: 40,
+    backgroundColor: "#FF7A00",
   },
   cardStyle: {
     borderRadius: 10,
   },
-  cardImages:{
-    borderRadius:10,
-    width:'100%',
-    height:200,
-    marginBottom:10
-  }
+  cardImages: {
+    borderRadius: 10,
+    width: "100%",
+    height: 200,
+    marginBottom: 10,
+  },
 });

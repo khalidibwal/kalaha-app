@@ -11,7 +11,7 @@ export default function HomeCard(){
             <View style={Styles.item}>
             <TouchableOpacity>
             <Card containerStyle={Styles.cardStyle}>
-                <Card.Title style={Styles.cardFont}>New Order</Card.Title>
+                <Text style={Styles.cardFont}>New Order</Text>
                 <Card.Image resizeMode="cover" source={require('./../../../assets/Images/HomeStorage/neworder.png')} containerStyle={Styles.cardOrder}/>
             </Card>
             </TouchableOpacity>
@@ -19,7 +19,7 @@ export default function HomeCard(){
             <View style={Styles.item}>
             <TouchableOpacity onPress={()=> navigation.navigate('Outlet')}>
             <Card containerStyle={Styles.cardStyle}>
-                <Card.Title style={Styles.cardFont}>Change Restaurants</Card.Title>
+                <Text style={Styles.cardFont}>Change Restaurants</Text>
                 <Card.Image source={require('./../../../assets/Images/HomeStorage/resto.png')} />
             </Card>
             </TouchableOpacity>
@@ -41,10 +41,11 @@ const Styles = StyleSheet.create({
       },
       cardStyle:{
         borderRadius:20,
-        backgroundColor:'#FFFAEC'
+        backgroundColor:'#E4C390'
       },
       cardFont:{
-        fontSize:10,
+        fontFamily:'Roboto',
+        fontSize:13,
         alignItems:'flex-start'
       },
       cardOrder:{

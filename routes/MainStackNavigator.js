@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../src/screen/Home/HomeScreen';
 import TestScreen from '../src/screen/Home/TestScreen';
 import Outlet from '../src/screen/Home/Outlet';
+import DetailOutlet from '../src/screen/Details/DetailOutlet';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, Octicons } from '@expo/vector-icons';
 
@@ -21,6 +22,7 @@ export default function MainStackNavigator() {
         <Stack.Screen name="Home" component={MyTabs} options={{headerShown:false}}/>
         <Stack.Screen name="Test" component={TestScreen}/>
         <Stack.Screen name="Outlet" component={Outlet}/>
+        <Stack.Screen name="Reserve" component={DetailOutlet}/>
     </Stack.Navigator>
     </NavigationContainer>
   );
