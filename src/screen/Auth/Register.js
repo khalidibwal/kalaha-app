@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import {
   View,
   Text,
@@ -16,38 +16,42 @@ import axios from "axios";
 
 export default function Register() {
   const {
-    myUser, setMyUser, 
-    dataName, setdataname,
-    myEmail, setMyEmail,
-    Phone, setPhone
-  } = useContext(Contextprv)
-  const [mypassword, setPassword] = useState('')
+    myUser,
+    setMyUser,
+    dataName,
+    setdataname,
+    myEmail,
+    setMyEmail,
+    Phone,
+    setPhone,
+  } = useContext(Contextprv);
+  const [mypassword, setPassword] = useState("");
   const defaultValues = {
-    username:myUser,
-    email:myEmail,
-    password:mypassword,
-    phone:Phone,
-    name:dataName
-  }
+    username: myUser,
+    email: myEmail,
+    password: mypassword,
+    phone: Phone,
+    name: dataName,
+  };
   const navigation = useNavigation();
-  const Navtologin =()=> {
+  const Navtologin = () => {
     navigation.navigate("login");
-  }
-  const HandleUser = e =>{
-    setMyUser(e)
-  }
-  const HandleName = e => {
-    setdataname(e)
-  }
-  const handleEmail = e => {
-    setMyEmail(e)
-  }
-  const HandlePassword = e =>{
-    setPassword(e)
-  }
-  const handlePhone = e =>{
-    setPhone(e)
-  }
+  };
+  const HandleUser = (e) => {
+    setMyUser(e);
+  };
+  const HandleName = (e) => {
+    setdataname(e);
+  };
+  const handleEmail = (e) => {
+    setMyEmail(e);
+  };
+  const HandlePassword = (e) => {
+    setPassword(e);
+  };
+  const handlePhone = (e) => {
+    setPhone(e);
+  };
   const HandleSubmit = (event) => {
     axios
       .post(
@@ -56,10 +60,10 @@ export default function Register() {
       )
       .then((response) => {
         if (response.status === 200) {
-          navigation.navigate('Home')
+          navigation.navigate("Home");
         }
       })
-      .catch((error)=> alert(error,'Wrong Username or Password'))
+      .catch((error) => alert(error, "Wrong Username or Password"));
   };
   return (
     <ImageBackground
@@ -72,11 +76,19 @@ export default function Register() {
           style={Styles.logo}
         />
         <Input placeholder="Username" onChangeText={HandleUser} />
-        <Input placeholder="Name" onChangeText={HandleName}/>
+        <Input placeholder="Name" onChangeText={HandleName} />
         <Input placeholder="email" onChangeText={handleEmail} />
-        <Input placeholder="Password" type="password" onChangeText={HandlePassword} />
-        <Input placeholder="Phone" onChangeText={handlePhone}/>
-        <TouchableOpacity style={Styles.appButtonContainer} activeOpacity={0.7} onPress={HandleSubmit}>
+        <Input
+          placeholder="Password"
+          type="password"
+          onChangeText={HandlePassword}
+        />
+        <Input placeholder="Phone" onChangeText={handlePhone} />
+        <TouchableOpacity
+          style={Styles.appButtonContainer}
+          activeOpacity={0.7}
+          onPress={HandleSubmit}
+        >
           <Text style={Styles.appButtonText}>Sign Up</Text>
         </TouchableOpacity>
         <Text style={Styles.txtCenter}>Already have account ? </Text>
