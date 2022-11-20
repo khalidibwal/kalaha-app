@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext} from "react";
 import {
   View,
   Text,
@@ -7,16 +7,18 @@ import {
   ScrollView,
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { Contextprv } from "../../contexts/Contextprv";
 import HomeCard from "../../component/card/HomeCard";
 import PromoCard from "../../component/card/PromoCard";
 import FeedBack from "../../component/card/FeedBack";
 
 export default function HomeScreen() {
+  const {dataName} = useContext(Contextprv)
   return (
     <>
     <View style={styles.container}>
       <View style={styles.title}>
-        <Text style={styles.fontText}>Hello, </Text>
+        <Text style={styles.fontText}>Hello,{dataName} </Text>
       </View>
       <View style={styles.description}>
         <Text style={styles.fontDescription}>

@@ -1,35 +1,33 @@
 import React from "react";
-import {View, Text, StyleSheet, Image,TouchableOpacity} from "react-native"
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Card } from "@rneui/themed";
 import { ScrollView } from "react-native";
 
-export default function PromoCard(){
-    return(
-        <>
-         <TouchableOpacity>
-                <View style={Styles.container}>
-                    <Image style={Styles.image} source={require('../../../assets/Images/HomeStorage/promo.png')} />
-
-                </View>
-            </TouchableOpacity>
-        </>
-    )
+export default function PromoCard(props) {
+  return (
+    <TouchableOpacity activeOpacity={0.7}>
+    <View style={Styles.container} >
+      <Image style={Styles.image}    
+       source={props.mySlide}
+        />
+    </View>
+    </TouchableOpacity>
+  );
 }
 
 const Styles = StyleSheet.create({
-    container : {
-        width : '100%',
-        top : 100,
-        marginBottom : 25,
-        borderRadius : 15,
-        backgroundColor : '#FFFFFF',
-
-    },
-
-    image : {
-        marginRight:10,
-        borderRadius:10,
-        height : 160
-    },
-})
-
+  container: {
+    width: 200,
+    height: 200,
+    justifyContent:'space-between',
+    alignContent:'center',
+    marginTop:10,
+    marginLeft: 5
+  },
+  image: {
+      flex:1 , 
+      width: undefined, 
+      height: undefined,
+      borderRadius:10,
+  }
+});

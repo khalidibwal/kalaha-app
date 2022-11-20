@@ -2,7 +2,9 @@ import React from "react";
 import { View, Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Card } from "@rneui/themed";
 import { CardTitle } from "@rneui/base/dist/Card/Card.Title";
+import { useNavigation } from "@react-navigation/native";
 export default function DetailOutlet({ route }) {
+  const navigation = useNavigation();
   const { imageData, desc, title } = route.params;
   return (
     <View style={Styles.container}>
@@ -11,7 +13,7 @@ export default function DetailOutlet({ route }) {
         <CardTitle>{title}</CardTitle>
         <Text style={Styles.fontTxt}>{desc}</Text>
         <View style={{ borderRadius: 10 }}>
-          <TouchableOpacity style={Styles.button}>
+          <TouchableOpacity style={Styles.button} onPress={()=> navigation.navigate('tabledate') }>
             <View>
               <Text style={Styles.btnText}>Reserve Table</Text>
             </View>
