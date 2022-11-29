@@ -9,21 +9,23 @@ import {
   ImageBackground,
   TextInput
 } from "react-native";
+import { Contextprv } from "../../contexts/Contextprv";
 import { Input } from "@rneui/themed";
 import { useNavigation } from "@react-navigation/native";
 import { Card } from "@rneui/themed";
 import axios from "axios";
 
 export default function Login() {
-  const [myUser, SetMyUser] = useState("");
+  // const [myUser, SetMyUser] = useState("");
   const [myPassword, SetMyPassword] = useState("");
+  const {myUser, setMyUser} = useContext(Contextprv)
   const defaultValues = {
     username: myUser,
     password: myPassword,
   };
 
   const HandleUser = e => {
-    SetMyUser(e);
+    setMyUser(e);
   };
 
   const handlePassword = e => {
@@ -40,9 +42,12 @@ export default function Login() {
           }
         }
       )
-      .then((response) => {
+      .then((response) => { 
         if (response.status === 200) {
-          navigation.navigate('Home')
+          navigation.push('Home',{
+            screen: 'master',
+            params : {myToken: response.data.authToken}
+          })
         }
       })
       .catch((error)=> alert(error,'Wrong Username or Password'))

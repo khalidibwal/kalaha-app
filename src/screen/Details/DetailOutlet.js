@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Contextprv } from "../../contexts/Contextprv";
 import { View, Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Card } from "@rneui/themed";
 import { CardTitle } from "@rneui/base/dist/Card/Card.Title";
 import { useNavigation } from "@react-navigation/native";
 export default function DetailOutlet({ route }) {
   const navigation = useNavigation();
+  const {myOutlet, setMyOutlet} = useContext(Contextprv)
   const { imageData, desc, title } = route.params;
   return (
     <View style={Styles.container}>
@@ -13,9 +15,9 @@ export default function DetailOutlet({ route }) {
         <CardTitle>{title}</CardTitle>
         <Text style={Styles.fontTxt}>{desc}</Text>
         <View style={{ borderRadius: 10 }}>
-          <TouchableOpacity style={Styles.button} onPress={()=> navigation.navigate('tabledate') }>
+          <TouchableOpacity style={Styles.appButtonContainer} onPress={()=> navigation.navigate('tabledate') }>
             <View>
-              <Text style={Styles.btnText}>Reserve Table</Text>
+              <Text style={Styles.appButtonText}>Reserve Table</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -26,7 +28,7 @@ export default function DetailOutlet({ route }) {
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "black",
   },
   cardStyle: {
     borderRadius: 10,
@@ -52,5 +54,20 @@ const Styles = StyleSheet.create({
     height: 60,
     backgroundColor: "#FF7A00",
     top:10
+  },
+  appButtonContainer: {
+    marginTop:10,
+    elevation: 8,
+    backgroundColor: "#D1B000",
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 100,
+  },
+  appButtonText: {
+    fontSize: 12,
+    color: "#fff",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase",
   },
 });

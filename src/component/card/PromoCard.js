@@ -22,6 +22,7 @@ const Styles = StyleSheet.create({
     justifyContent:'space-between',
     alignContent:'center',
     marginTop:10,
+    marginBottom:10,
     marginLeft: 5
   },
   image: {
