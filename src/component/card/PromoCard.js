@@ -5,7 +5,7 @@ import { ScrollView } from "react-native";
 
 export default function PromoCard(props) {
   return (
-    <TouchableOpacity activeOpacity={0.7}>
+    <TouchableOpacity activeOpacity={0.7} onPress={props.onPress}>
     <View style={Styles.container} >
       <Image style={Styles.image}    
        source={props.mySlide}

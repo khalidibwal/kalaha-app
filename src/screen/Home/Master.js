@@ -53,6 +53,9 @@ export default function Master(props) {
   function ToAllOutlets(){
     Navigation.navigate('Outlet')
   }
+  function ToMyRewards(){
+    Navigation.navigate('reward')
+  }
 
   const carousel = {
     sw: require("../../../assets/Images/HomeStorage/newyear.png"),
@@ -84,7 +87,7 @@ export default function Master(props) {
         </ScrollView>
         <View style={{ flexDirection: "row" }}>
           <PromoCard mySlide={promo.promote} />
-          <PromoCard mySlide={promo.rewards} />
+          <PromoCard mySlide={promo.rewards} onPress={()=>ToMyRewards()}/>
         </View>
       </View>
     </>

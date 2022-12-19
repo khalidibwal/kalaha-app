@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "kalaha-app",
+    "name": "kalahaGroup",
     "slug": "kalaha-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/fnb.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.khalid1995.kalahaapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

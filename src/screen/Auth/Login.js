@@ -63,11 +63,14 @@ export default function Login() {
           style={Styles.logo}
         />
         <Input
+          style={{color:'white'}}
           placeholder="Username"
           name="username"
           onChangeText={HandleUser}
         />
         <Input
+          secureTextEntry={true}
+          style={{color:'white'}}
           placeholder="Password"
           type="password"
           name="password"

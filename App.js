@@ -11,7 +11,11 @@ export default function App() {
   const [Phone, setPhone] = useState('')
   const [myToken, setMyToken] = useState('')
   const [myOutlet, setMyOutlet] = useState('')
+  const [myTitle, setMyTitle] = useState('')
   const [myDate, setMyDate] = useState('')
+  const [timeRes, setTimeres] = useState('')
+  const [rpeople, setPeople] = useState('')
+  const [myMenu, setMenuTitle] = useState([])
   const SyncData = {
     myUser, setMyUser,
     dataName, setdataname,
@@ -19,7 +23,11 @@ export default function App() {
     Phone, setPhone,
     myToken, setMyToken,
     myOutlet, setMyOutlet,
-    myDate, setMyDate
+    myTitle, setMyTitle,
+    myDate, setMyDate,
+    timeRes, setTimeres,
+    rpeople, setPeople,
+    myMenu, setMenuTitle
   }
   return (
     <Contextprv.Provider value={SyncData}>

@@ -7,9 +7,10 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import * as React from "react";
+import React,{useContext} from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Contextprv } from "../src/contexts/Contextprv";
 import Master from "../src/screen/Home/Master";
 import HomeScreen from "../src/screen/Home/HomeScreen";
 import TestScreen from "../src/screen/Home/OrderDate";
@@ -22,6 +23,9 @@ import HistoryScreen from "../src/screen/Home/HistoryScreen";
 import Login from "../src/screen/Auth/Login";
 import Register from "../src/screen/Auth/Register";
 import ProfileScreen from "../src/screen/Profile/ProfileScreen";
+import Rewards from "../src/screen/Home/Rewards";
+import FoodMenu from "../src/screen/Order/FoodMenu";
+import OrderScreen from "../src/screen/Order/OrderScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,6 +49,7 @@ const ImageHeader = () => (
 );
 
 export default function MainStackNavigator() {
+  const {Token} = useContext(Contextprv)
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -86,6 +91,9 @@ export default function MainStackNavigator() {
         <Stack.Screen name="Outlet" component={Outlet} />
         <Stack.Screen name="Reserve" component={DetailOutlet} options={{headerTitle:'Reservation'}} />
         <Stack.Screen name="tabledate" component={OrderDate} options={{headerTitle:'Reserve Table'}}/>
+        <Stack.Screen name="reward" component={Rewards} options={{headerTitle:'Earn Point'}}/>
+        <Stack.Screen name="foodmenu" component={FoodMenu} options={{headerTitle:'Our Menu'}}/>
+        <Stack.Screen name="order" component={OrderScreen} options={{headerTitle:'Order'}}/>
         <Stack.Screen
           name="profile"
           component={ProfileScreen}
@@ -153,7 +161,7 @@ function MyTabs() {
             );
           },
           tabBarLabel: ({ focused }) => {
-            return <Text style={styles.labelFont}>Promo</Text>;
+            return <Text style={styles.labelFont}>Coupon</Text>;
           },
           headerShown: false,
         }}

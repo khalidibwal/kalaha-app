@@ -14,6 +14,7 @@ export default function ProfileScreen(props) {
     setMyToken,
     Phone,
     myOutlet,
+    myTitle
   } = useContext(Contextprv);
 
   return (
@@ -49,10 +50,10 @@ export default function ProfileScreen(props) {
           <Text style={Styles.avatext}>{Phone}</Text>
           <Card.Divider style={Styles.divider}></Card.Divider>
         </View>
-        {myOutlet ? (
+        {myTitle ? (
           <View>
             <Text style={Styles.avatext}>Location</Text>
-            <Text style={Styles.avatext}>{myOutlet}</Text>
+            <Text style={Styles.avatext}>{myTitle}</Text>
           </View>
         ) : (
           <View>

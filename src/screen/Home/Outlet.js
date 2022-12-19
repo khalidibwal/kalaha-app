@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Outlet() {
   const navigation = useNavigation();
-  const {myOutlet, setMyOutlet} = useContext(Contextprv)
+  const {myOutlet, setMyOutlet, myTitle, setMyTitle,} = useContext(Contextprv)
   const slides = {
     den: require("../../../assets/Images/Outles/DEN/den.jpg"),
     pier: require("../../../assets/Images/Outles/PIER/pier1.jpg"),
@@ -27,7 +27,8 @@ export default function Outlet() {
               imageData: slides.den,
               desc: slidetxt.den,
               title: "DEN Of Kalaha",
-              dens: setMyOutlet('DEN Of Kalaha')
+              univTitle: setMyTitle("DEN Of Kalaha"),
+              dens: setMyOutlet(slides.den)
             })
           }
           buttonTitle="DEN Of Kalaha"
@@ -39,7 +40,8 @@ export default function Outlet() {
               imageData: slides.pier,
               desc: slidetxt.pier,
               title: "PIER By Kalaha",
-              dens: setMyOutlet('PIER By Kalaha')
+              univTitle: setMyTitle("PIER By Kalaha"),
+              dens: setMyOutlet(slides.pier)
             })
           }
           buttonTitle="PIER By Kalaha"
@@ -49,9 +51,10 @@ export default function Outlet() {
           onPress={() =>
             navigation.navigate("Reserve", {
               imageData: slides.wharf,
-              desc: slidetxt.den,
+              desc: slidetxt.wharf,
               title: "Kalaha@TheWHARF",
-              dens: setMyOutlet('Kalaha@TheWHARF')
+              univTitle: setMyTitle("Kalaha@TheWHARF"),
+              dens: setMyOutlet(slides.wharf)
             })
           }
           buttonTitle="Kalaha@TheWHARF"
